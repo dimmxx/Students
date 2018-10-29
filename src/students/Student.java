@@ -2,15 +2,9 @@ package students;
 
 public class Student {
 
-     public Student(String fName, String sName) {
+    public Student(String fName, String sName, int performance, int attendance, int activity) {
         this.fName = fName;
         this.sName = sName;
-    }
-
-    public Student(String fName, String sName, int group, int performance, int attendance, int activity) {
-        this.fName = fName;
-        this.sName = sName;
-        this.group = group;
         this.performance = performance;
         this.attendance = attendance;
         this.activity = activity;
@@ -18,7 +12,7 @@ public class Student {
 
     private String fName;
     private String sName;
-    private int group;
+    private int groupId;
     private int performance;
     private int attendance;
     private int activity;
@@ -32,11 +26,18 @@ public class Student {
         return sName;
     }
 
+    public void setGroup(int group){
+        this.groupId = group;
+    }
+
+
+
+
 
     public void printStudent(){
         System.out.println("First name: " + fName);
         System.out.println("Second name: " + sName);
-        System.out.println("Group number: " + group);
+        System.out.println("Group ID: " + groupId);
         System.out.println("Performance: " + performance);
         System.out.println("Attendance: " + attendance);
         System.out.println("Activity: " + activity);

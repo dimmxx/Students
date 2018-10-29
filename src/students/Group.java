@@ -13,6 +13,7 @@ public class Group {
     public void addStudent(Student student){
         this.membership[quantity] = student;
         this.quantity++;
+        student.setGroup(groupID);
     }
 
     public void printGroup(){
@@ -23,9 +24,13 @@ public class Group {
         }
     }
 
-
     public Student selectLeader(){
         for(int i = 0; i < this.membership.length; i++){
+
+
+
+
+
 
         }
 
