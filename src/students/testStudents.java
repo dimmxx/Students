@@ -1,6 +1,8 @@
 package students;
 
 
+import java.util.Arrays;
+
 public class testStudents {
 
 
@@ -31,36 +33,49 @@ public class testStudents {
         group1.selectLeaderSecondRound();
 
 */
-    Generate.generateStudent(10);
-    Student.printStudentList();
+        Generate.generateStudent(50);
+        Student.printStudentList();
 
 
-    Group group1 = new Group(1);
-    Group group2 = new Group(2);
+        Group group1 = new Group(1);
+        Group group2 = new Group(2);
 
-    for(int i = 0; i < 5; i++){
-        group1.addStudent(Generate.getStudentArray()[i]);
-    }
+        for(int i = 0; i < 25; i++){
+            group1.addStudent(Generate.getStudentArray()[i]);
+        }
 
-     for(int i = 5; i < 10; i++){
-        group2.addStudent(Generate.getStudentArray()[i]);
-    }
+        for(int i = 25; i < 50; i++){
+            group2.addStudent(Generate.getStudentArray()[i]);
+        }
 
-    group1.printGroup();
-    group2.printGroup();
-    Student.printStudentList();
+        group1.printGroup();
+        group2.printGroup();
+        Student.printStudentList();
 
-    group1.selectLeaderFirstRound();
-    System.out.println(group1.leaderCandSize);
+        group1.selectLeaderFirstRound();
+        System.out.println(group1.leaderCandSize);
 
-    group2.selectLeaderFirstRound();
-    System.out.println(group2.leaderCandSize);
+        group2.selectLeaderFirstRound();
+        System.out.println(group2.leaderCandSize);
 
-    group1.selectLeaderSecondRound();
-    group2.selectLeaderSecondRound();
+        group1.selectLeaderSecondRound();
+        group2.selectLeaderSecondRound();
 
-    Professor professor1 = new Professor();
-    professor1.addGroupToTeach(group1);
+        Professor professor1 = new Professor("Maxwell");
+        professor1.addGroupToProf(group1);
+        professor1.printProf();
+
+
+
+        group1.startLesson();
+        System.out.println(group1.getNumberAbsent());
+        System.out.println(Arrays.toString(group1.getAbsentArray()));
+
+
+        professor1.checkAttandance();
+
+
+
 
 
 
