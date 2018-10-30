@@ -51,6 +51,24 @@ public class Student {
         System.out.println("Activity: " + activity);
 
     }
+
+
+    public static void printStudentList() {
+        for (int i = 0; i < Generate.getStudentArraySize(); i++) {
+
+            System.out.println(i + 1);
+            System.out.println("First name: " + Generate.getStudentArray()[i].fName);
+            System.out.println("Second name: " + Generate.getStudentArray()[i].sName);
+            System.out.println("Group ID: " + Generate.getStudentArray()[i].groupId);
+            System.out.println("Performance: " + Generate.getStudentArray()[i].performance);
+            System.out.println("Attendance: " + Generate.getStudentArray()[i].attendance);
+            System.out.println("Activity: " + Generate.getStudentArray()[i].activity);
+            System.out.println();
+        }
+    }
+
+
+
 }
 
 
