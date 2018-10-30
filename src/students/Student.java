@@ -30,9 +30,17 @@ public class Student {
         this.groupId = group;
     }
 
+    public int getPerformance() {
+        return performance;
+    }
 
+    public int getAttendance() {
+        return attendance;
+    }
 
-
+    public int getActivity() {
+        return activity;
+    }
 
     public void printStudent(){
         System.out.println("First name: " + fName);
