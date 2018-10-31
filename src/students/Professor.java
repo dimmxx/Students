@@ -2,11 +2,20 @@ package students;
 
 public class Professor {
 
-    String surname;
+    private String surname;
     private Group[] groupToProf = new Group[1];
 
     public Professor(String surname) {
         this.surname = "Professor " + surname;
+    }
+
+
+    public Group[] getGroupToProf() {
+        return groupToProf;
+    }
+
+    public String getSurname() {
+        return surname;
     }
 
     public void addGroupToProf(Group group){
@@ -15,7 +24,7 @@ public class Professor {
 
     public void printProf(){
         System.out.println(this.surname);
-        System.out.println(this.groupToProf[0].getGroupID());
+        System.out.println("is allotted to Group " + this.groupToProf[0].getGroupID());
     }
 
     public void checkAttandance(){
