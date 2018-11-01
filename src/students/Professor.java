@@ -22,11 +22,13 @@ public class Professor {
         this.groupToProf[0] = group;
     }
 
+    //the methods display the info about a professor
     public void printProf(){
         System.out.println(this.surname);
         System.out.println("is allotted to Group " + this.groupToProf[0].getGroupID());
     }
 
+    //the methods takes attendance and checks which students are absent
     public void checkAttandance(){
         Group group = this.groupToProf[0];
         System.out.println("The full list of Group " + group.getGroupID() + ":");

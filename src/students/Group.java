@@ -33,23 +33,27 @@ public class Group {
         return absentArray;
     }
 
+    public int getQuantity() { return quantity; }
+
+    public Student getGroupLeader() {return groupLeader;}
+
+    // method to add a student to a group
     public void addStudent(Student student){
         this.membership[quantity] = student;
         this.quantity++;
         student.setGroup(groupID);
     }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
+    // display group membership
     public void printGroup(){
         System.out.println("Group " + this.groupID + ":");
         for(int i = 0; i < this.membership.length; i++) {
             if(membership[i] != null) System.out.println(i + 1 + ". "
                     + this.membership[i].getfName() + " " + this.membership[i].getsName());
         }
+        if (this.groupLeader != null)
+            System.out.println("Group leader: " + this.groupLeader.getsName() + " " + this.groupLeader.getfName());
     }
+
     // Elect Group Leader: the first round of elections.
     int leaderCandSize = 0;
     Student[] leaderCandidate = new Student[GROUPSIZE];
@@ -64,7 +68,7 @@ public class Group {
         }
         if (leaderCandSize == 1){
             this.groupLeader = leaderCandidate[0];
-            System.out.println("The leader of the Group " + this.groupID + " is " +
+            System.out.println("The leader of Group " + this.groupID + " is " +
                     this.groupLeader.getfName() + " " + this.groupLeader.getsName());
         } else{
             System.out.println("The list of candidates: ");
@@ -87,14 +91,12 @@ public class Group {
                 + this.groupID + " is " + groupLeader.getfName() + " " + groupLeader.getsName());
     }
 
+    // the method is required to generate a random list of absent students
     public void startLesson(){
         for(int i = 0; i < absentArray.length; i++){
             this.absentArray[i] = rnd.nextInt(this.quantity);
         }
     }
-
-
-
 
 }
 

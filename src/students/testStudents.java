@@ -9,7 +9,7 @@ public class testStudents {
         System.out.println();
         System.out.println("Now we are going to generate a random list of 50 students. Every student has next fields:\n" +
                            "First name, Second Name and numeric characteristics (0 - 100) - Performance, Attendance and Activity.\n" +
-                           "The field Group ID is null because students have not been assigned to any group yet");
+                           "The field GroupID is null because students have not been assigned to any group yet.");
         pause();
 
         Generate.generateStudent(50);
@@ -35,7 +35,7 @@ public class testStudents {
         group2.printGroup();
 
         System.out.println();
-        System.out.println("We can print out the list of all the students with Group ID defined.");
+        System.out.println("We can print out the list of all the students with GroupID defined.");
         pause();
 
         Student.printStudentList();
@@ -43,9 +43,9 @@ public class testStudents {
         System.out.println("Now we are going to hold elections of leaders of the groups.\n" +
                 "The elections are expected to take 2 rounds. During the first round candidates will be \n" +
                 "estimated on their personal characteristics - performance, attendance and activity.\n" +
-                "Thresholds of personal characteristics values are 50-50-50 (Performance/Attemdance/Activity).\n" +
-                "In case there are 0 or >1 candidates after the first round - the second round will be held\n" +
-                "If there is only 1 candidate - he(she) will be elected as the leader of the group");
+                "Thresholds of personal characteristics values are 50-50-50 (Performance/Attendance/Activity).\n" +
+                "In case there are 0 or >1 candidates after the first round - the second round will be held.\n" +
+                "If there is only 1 candidate - he(she) will be elected as the leader of the group.");
 
         pause();
         System.out.println("Group1: The first round elections results:\n");
@@ -66,6 +66,14 @@ public class testStudents {
         group1.selectLeaderSecondRound();
         group2.selectLeaderSecondRound();
 
+
+
+        System.out.println();
+        System.out.println("Printing out info about every group with leaders elected.\n");
+
+        group1.printGroup();
+        System.out.println();
+        group2.printGroup();
 
         System.out.println();
         System.out.println("Now we are inviting 2 professors - professor1 and professor2 and assign groups to them.");
@@ -94,7 +102,6 @@ public class testStudents {
 
         pause();
 
-
         System.out.println(professor1.getSurname() + " is taking attendance in Group " + professor1.getGroupToProf()[0].getGroupID());
 
         professor1.checkAttandance();
@@ -103,12 +110,10 @@ public class testStudents {
         System.out.println(professor2.getSurname() + " is taking attendance in Group " + professor2.getGroupToProf()[0].getGroupID());
 
         professor2.checkAttandance();
-
-
-
     }
 
 
+    // the method is required to pause the app and wait the user taps Enter
     public static void pause(){
         Scanner scan = new Scanner(System.in);
         System.out.println();
